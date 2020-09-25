@@ -1,7 +1,8 @@
-package com.hazizah.simplepagination
+package com.hazizah.simplepagination.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hazizah.simplepagination.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

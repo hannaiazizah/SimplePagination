@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Simple Pagination</string>
+    <string name="app_name">Github User Finder</string>
+    <string name="tap_to_retry">Tap to retry.</string>
+    <string name="search">Search user here…</string>
+    <string name="failed_to_get_data">Failed to get data.</string>
+    <string name="cannot_found_the_user">Cannot found the user.</string>
 </resources>
