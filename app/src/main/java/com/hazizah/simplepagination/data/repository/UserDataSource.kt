@@ -40,7 +40,7 @@ class UserDataSource(
         totalCount.postValue(null)
         runBlocking {
             try {
-                val response = service.getUsers(q = query, page = 1, pageSize = 25)
+                val response = service.getUsers(q = "$query in:login", page = 1, pageSize = 25)
                 when{
                     response.isSuccessful -> {
                         updateState(State.DONE)
@@ -68,7 +68,7 @@ class UserDataSource(
         runBlocking {
             try {
                 val response = service.getUsers(
-                    q = query,
+                    q = "$query in:login",
                     pageSize = 25,
                     page = params.key
                 )
