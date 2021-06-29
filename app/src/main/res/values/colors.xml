@@ -6,4 +6,8 @@
     <color name="colorText">#130704</color>
     <color name="white">#ffffff</color>
     <color name="gray">#666666</color>
+
+
+    <color name="primary_text_color">#090F0F</color>
+    <color name="secondary_text_color">#222929</color>
 </resources>
