@@ -42,8 +42,8 @@ class ProductDataSource(
             try {
                 val response = service.getProducts(
                         keyword = query,
-                        price = "0",
-                        premiumSeller = true,
+                        price = null,
+                        premiumSeller = false,
                         condition = "new",
                         offset = 0,
                         pageSize = 20
@@ -54,7 +54,7 @@ class ProductDataSource(
                         retry = null
                         val listing = response.body()
                         val users = listing?.children
-                        totalCount.postValue(listing?.totalCount)
+                        totalCount.postValue(200)
                         callback.onResult(users!!, null, 2)
                     }
                     else ->  {
@@ -76,10 +76,10 @@ class ProductDataSource(
             try {
                 val response = service.getProducts(
                     keyword = query,
-                    price = "0",
-                    premiumSeller = true,
+                    price = null,
+                    premiumSeller = false,
                     condition = "new",
-                    offset = 0,
+                    offset = params.key,
                     pageSize = 20
                 )
                 when{

@@ -31,7 +31,7 @@ class ProductListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when(viewType) {
-            DATA_VIEW_TYPE -> UserViewHolder.create(parent)
+            DATA_VIEW_TYPE -> ProductViewHolder.create(parent)
             else -> ListFooterViewHolder.create(retry, parent)
         }
     }

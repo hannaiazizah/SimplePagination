@@ -16,7 +16,7 @@ interface ProductService {
     @GET("products")
     suspend fun getProducts(
         @Query("keywords") keyword: String,
-        @Query("price_range") price: String? = "0",
+        @Query("price_range") price: String? = "0:0",
         @Query("premium_seller") premiumSeller: Boolean = true,
         @Query("condition") condition: String?,
         @Query("offset") offset: Int? = 0,
@@ -24,12 +24,8 @@ interface ProductService {
     ): Response<ListingData>
 
     class ListingData(
-        @SerializedName("items")
-        val children: List<Product>,
-        @SerializedName("total_count")
-        val totalCount: Int,
-        @SerializedName("incomplete_results")
-        val isComplete: Boolean
+        @SerializedName("data")
+        val children: List<Product>
     )
 
     companion object {

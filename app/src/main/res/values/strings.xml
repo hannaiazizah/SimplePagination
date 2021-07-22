@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Github User Finder</string>
+    <string name="app_name">Search App</string>
     <string name="tap_to_retry">Tap to retry.</string>
     <string name="search">Search product here…</string>
     <string name="failed_to_get_data">Failed to get data.</string>

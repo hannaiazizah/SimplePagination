@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    tools:context=".presentation.FilterFragment">
+
+    <TextView
+        android:id="@+id/txt_price_range_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price Range"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_min_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Min Price"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@id/edt_max_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_price_range_title"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/edt_max_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:hint="Max price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edt_min_price"
+        app:layout_constraintTop_toTopOf="@id/edt_min_price" />
+
+    <ImageView
+        android:id="@+id/img_bukamall"
+        android:layout_width="160dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/edt_min_price"
+        app:layout_constraintTop_toBottomOf="@id/edt_min_price"
+        app:srcCompat="@drawable/ic_bukamall_logo" />
+
+    <SeekBar
+        android:id="@+id/tgb_bukamall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/img_bukamall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/img_bukamall" />
+
+    <TextView
+        android:id="@+id/txt_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Condition"
+        app:layout_constraintStart_toStartOf="@id/img_bukamall"
+        app:layout_constraintTop_toBottomOf="@id/img_bukamall" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_all"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="All"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_condition" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_new"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="New"
+        app:layout_constraintStart_toEndOf="@id/btn_all"
+        app:layout_constraintTop_toTopOf="@id/btn_all" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_used"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Used"
+        app:layout_constraintStart_toEndOf="@id/btn_new"
+        app:layout_constraintTop_toTopOf="@id/btn_new" />
+</androidx.constraintlayout.widget.ConstraintLayout>

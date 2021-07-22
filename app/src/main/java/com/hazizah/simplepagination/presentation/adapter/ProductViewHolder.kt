@@ -14,9 +14,10 @@ class ProductViewHolder(view: View): RecyclerView.ViewHolder(view) {
     fun bind(product: Product?) {
         product?.let {
             itemView.txt_product_name.text = product.productName
+            itemView.txt_product_price.text = PriceFormatter.format(product.productPrice)
             Glide
                 .with(itemView.context)
-                .load(product.thumbnailUrl)
+                .load(product.images.smallUrl[0])
                 .placeholder(R.drawable.placeholder_avatar)
                 .into(itemView.img_product_thumbnail)
         }

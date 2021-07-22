@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hazizah.simplepagination.R
 import com.hazizah.simplepagination.databinding.FragmentUserListBinding
 import com.hazizah.simplepagination.domain.State
 import com.hazizah.simplepagination.presentation.adapter.ProductListAdapter
@@ -100,6 +102,11 @@ class UserListFragment : Fragment() {
                     binding.errorLayout.visibility = View.GONE
                     binding.listUsers.visibility = View.GONE
                     binding.txtNoUserFound.visibility = View.GONE
+                } else {
+                    newText?.let {
+                        viewModel.searchProduct(newText)
+                        hasSubmit = true
+                    }
                 }
                 return false
             }
@@ -112,6 +119,11 @@ class UserListFragment : Fragment() {
                 return false
             }
         })
+
+        binding.btnFilter.setOnClickListener {
+
+           findNavController().navigate(R.id.filterFragment)
+        }
     }
 
     override fun onDestroyView() {

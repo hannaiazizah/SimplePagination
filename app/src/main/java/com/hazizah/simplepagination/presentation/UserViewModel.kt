@@ -1,11 +1,10 @@
 package com.hazizah.simplepagination.presentation
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import androidx.paging.PagedList
 import com.hazizah.simplepagination.domain.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class UserViewModel(
     private val userRepository: UserRepository,
@@ -32,6 +31,13 @@ class UserViewModel(
     fun searchProduct(query: String) {
         val data = productRepository.searchProduct(query)
         _productListing.postValue(data)
+
+        viewModelScope.launch(Dispatchers.Main) {
+            suspend fun a1(): Boolean = true
+            suspend fun a2() = 1
+
+
+        }
     }
 
 }

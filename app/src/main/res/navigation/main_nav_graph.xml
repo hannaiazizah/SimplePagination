@@ -7,5 +7,14 @@
     <fragment
         android:id="@+id/pagedListFragment"
         android:name="com.hazizah.simplepagination.presentation.UserListFragment"
-        android:label="Paged List"/>
+        android:label="Paged List">
+
+        <action
+            android:id="@+id/action_to_filterFragment"
+            app:destination="@id/filterFragment"/>
+    </fragment>
+
+    <dialog
+        android:id="@+id/filterFragment"
+        android:name="com.hazizah.simplepagination.presentation.FilterFragment"/>
 </navigation>
